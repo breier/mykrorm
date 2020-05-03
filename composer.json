@@ -1,0 +1,33 @@
+{
+    "name": "breier/mykrorm",
+    "description": "Provides less than minimal DB functionality with still some intuitive automated stuff",
+    "license": "GPL-3.0-or-later",
+    "keywords": ["php", "micro", "orm", "database", "minimal"],
+    "version": "2.0.0",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Andre Breier",
+            "email": "breier.de@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "breier/extended-array": "^2.1",
+        "ext-pdo": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Breier\\": "src/",
+            "Breier\\MykrORM\\Exception\\": "src/Exception"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\": "tests/"
+        }
+    }
+}

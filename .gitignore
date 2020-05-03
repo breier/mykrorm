@@ -1,0 +1,5 @@
+/vendor
+/tests/coverage
+/cov.xml
+.phpunit.result.cache
+testing.sqlite3
