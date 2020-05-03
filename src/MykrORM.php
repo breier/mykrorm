@@ -53,7 +53,7 @@ abstract class MykrORM
     {
         if (empty($this->dbTableName)) {
             $this->dbTableName = basename(
-                str_replace('\\', '/', strtolower(static::class))
+                str_replace('\\', '/', self::camelToSnake(static::class))
             );
         }
     }

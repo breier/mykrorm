@@ -179,7 +179,7 @@ class CRUDTest extends TestCase
             'no-db' => [
                 'criteria' => ['id' => 123],
                 'expect' => [
-                    'exception' => 'SQLSTATE[HY000]: General error: 1 no such table: mykrormtestmodel'
+                    'exception' => 'SQLSTATE[HY000]: General error: 1 no such table: mykr_orm_test_model'
                 ],
                 'exec' => '$this->testModel->destroyDB();'
                     . ' $this->testModel = new \Test\MykrORMTestModel();',
