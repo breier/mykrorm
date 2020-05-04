@@ -3,7 +3,7 @@
     "description": "Provides less than minimal DB functionality with still some intuitive automated stuff",
     "license": "GPL-3.0-or-later",
     "keywords": ["php", "micro", "orm", "database", "minimal"],
-    "version": "2.1.0",
+    "version": "2.1.1",
     "type": "library",
     "authors": [
         {
