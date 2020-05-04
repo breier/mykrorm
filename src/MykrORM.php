@@ -88,7 +88,16 @@ abstract class MykrORM
         }
 
         try {
-            $this->dbConn = new PDO($this->getDSN(), null, null, $this->dbOptions);
+            $dbDSN = $this->getDSN();
+            $dsnParams = substr($dbDSN, strpos($dbDSN, ':') + 1);
+            parse_str(str_replace(';', '&', $dsnParams), $params);
+
+            $this->dbConn = new PDO(
+                $dbDSN,
+                $params['username'] ?? $params['user'] ?? null,
+                $params['password'] ?? $params['pass'] ?? null,
+                $this->dbOptions
+            );
         } catch (PDOException $e) {
             throw new DBException($e->getMessage(), $e->getCode(), $e);
         }
