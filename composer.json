@@ -3,7 +3,7 @@
     "description": "Provides less than minimal DB functionality with still some intuitive automated stuff",
     "license": "GPL-3.0-or-later",
     "keywords": ["php", "micro", "orm", "database", "minimal"],
-    "version": "2.1.1",
+    "version": "2.1.2",
     "type": "library",
     "authors": [
         {
@@ -12,8 +12,8 @@
         }
     ],
     "require": {
-        "php": "^7.3",
-        "breier/extended-array": "^2.1",
+        "php": "^7.3|^8.0",
+        "breier/extended-array": "^2.2",
         "ext-pdo": "*"
     },
     "require-dev": {

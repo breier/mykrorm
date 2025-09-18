@@ -80,8 +80,8 @@ class MykrORMTest extends TestCase
 
             $this->assertTrue(false); // Hasn't thrown an exception
         } catch (DBException $e) {
-            $this->assertSame(
-                'invalid data source name',
+            $this->assertStringContainsString(
+                'valid data source name',
                 $e->getMessage()
             );
         }

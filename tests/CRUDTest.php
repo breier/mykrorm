@@ -149,7 +149,7 @@ class CRUDTest extends TestCase
         $emptyTestModel = new MykrORMTestModel();
         $emptyTestModel->date = '2020-03-22 17:16:15';
         $emptyTestModel->text = 'success creation';
-        $emptyTestModel->id = '1';
+        $emptyTestModel->id = 1;
 
         return [
             'not-there' => [

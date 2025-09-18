@@ -349,9 +349,9 @@ abstract class MykrORM
     {
         $propertyFields = new ExtendedArray($this->getDBProperties());
 
-        foreach ($propertyFields as $field => &$value) {
+        foreach ($propertyFields->keys() as $field) {
             $propertyName = lcfirst(self::snakeToCamel($field));
-            $value = $this->{$propertyName};
+            $propertyFields->offsetSet($field, $this->{$propertyName});
         }
 
         return $propertyFields;
@@ -366,7 +366,9 @@ abstract class MykrORM
     ): void {
         $index = 0;
 
-        foreach ($parameters as &$value) {
+        $paramArray = $parameters->getArrayCopy();
+
+        foreach ($paramArray as &$value) {
             if (is_null($value)) {
                 $statement->bindParam(++$index, $value, PDO::PARAM_NULL);
             } elseif (is_bool($value)) {
@@ -375,6 +377,8 @@ abstract class MykrORM
                 $statement->bindParam(++$index, $value, PDO::PARAM_STR);
             }
         }
+
+        $parameters = new ExtendedArray($paramArray);
     }
 
     /**
